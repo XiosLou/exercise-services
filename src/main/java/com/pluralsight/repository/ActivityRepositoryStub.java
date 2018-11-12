@@ -36,6 +36,10 @@ public class ActivityRepositoryStub implements ActivityRepository {
 	@Override
 	public Activity findActivity(String activityId) {
 		
+		if(activityId.equals("7777")) {
+			return null;
+		}
+		
 		Activity activity1 = new Activity();
 		
 		activity1.setId("1234");
@@ -49,6 +53,24 @@ public class ActivityRepositoryStub implements ActivityRepository {
 		activity1.setUser(user);
 		
 		return activity1;
+	}
+
+	@Override
+	public Activity update(Activity activity) {
+		/*search database to see if we have an activity with that id already
+		 * select * from acivity where id = ?
+		 * if rs size == 0 
+		 * insert into acctivity table
+		 * else
+		 * update the Activity
+		 */
+		return activity;
+	}
+
+	@Override
+	public void delete(String activityId) {
+		// Delete from activity were activityId = ?
+		
 	}
 	
 }

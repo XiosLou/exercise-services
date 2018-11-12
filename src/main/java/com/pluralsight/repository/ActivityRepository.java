@@ -12,4 +12,9 @@ public interface ActivityRepository {
 
 	void create(Activity activity);
 
+	Activity update(Activity activity);
+
+	void delete(String activityId);
+
+
 }
